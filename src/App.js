@@ -21,6 +21,11 @@ class Square extends React.Component {
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.boardstate = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  }
+
   renderSquare(i) {
     return <Square value={i} />;
   }
@@ -32,19 +37,19 @@ class Board extends React.Component {
       <div>
         <div className="status">{status}</div>
         <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(0)}
-          {this.renderSquare(0)}
+          {this.renderSquare(this.boardstate[0])}
+          {this.renderSquare(this.boardstate[1])}
+          {this.renderSquare(this.boardstate[2])}
         </div>
         <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(0)}
-          {this.renderSquare(0)}
+          {this.renderSquare(this.boardstate[3])}
+          {this.renderSquare(this.boardstate[4])}
+          {this.renderSquare(this.boardstate[5])}
         </div>
         <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(0)}
-          {this.renderSquare(0)}
+          {this.renderSquare(this.boardstate[6])}
+          {this.renderSquare(this.boardstate[7])}
+          {this.renderSquare(this.boardstate[8])}
         </div>
       </div>
     );
@@ -52,6 +57,7 @@ class Board extends React.Component {
 }
 
 class Game extends React.Component {
+
   render() {
     return (
       <div className="game">
